@@ -4,12 +4,19 @@ const Product = require('../models/product')
 const Category = require('../models/category')
 
 function listProduct(req, res){
+	if (req.session.login) {
+		console.log("El usuario esta loggeado")
+		console.log(req.session.login)
+		console.log(req.session.name)
+	}
 	Product.find({}).populate('cat_id').sort({'_id':-1}).exec((err, products) => {
 		if(err) return res.end('Hubo un error al listar los productos')
 		if(!products) return res.end('No hay productos disponibles')
 		res.render('index', {
 			title: 'LISTADO DE LOS PRODUCTOS DISPONIBLES',
-			pro: products
+			pro: products,
+			login: req.session.login,
+			name: req.session.name
 		})
 	})
 }
