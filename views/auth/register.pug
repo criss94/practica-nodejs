@@ -1,0 +1,25 @@
+extends ../layouts/master
+block content
+	h2(align="center") REGISTRATE GRATIS
+	form(action="/signup", method="POST")
+		table
+			tr
+				th Name
+				td
+					input(type="text", name="name")
+			tr
+				th lastName
+				td
+					input(type="text", name="lastName")
+			tr
+				th Email
+				td
+					input(type="text", name="email")
+			tr
+				th password
+				td
+					input(type="password", name="password")
+			tr
+				th
+				td
+					input(type="submit", value="registrarse")

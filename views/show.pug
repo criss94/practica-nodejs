@@ -1,0 +1,25 @@
+extends layouts/master
+block content
+	h2(align="center")= title
+	form(action= action, method="POST", onsubmit="return eliminar()")
+		table
+			tr
+				th Name
+				td= p.name
+			tr
+				th Description
+				td= p.description
+			tr
+				th Price
+				td= p.price
+			tr
+				th Category
+				td= p.cat_id.cat_name
+			tr
+				th
+				td
+					input(type="submit", value="eliminar")
+					a(href="/") volver
+block footer
+	script
+		include js/delete.js

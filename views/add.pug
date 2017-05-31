@@ -1,0 +1,28 @@
+extends layouts/master
+block content
+	h2(align="center")= title
+	form(action="/save", method="POST")
+		table
+			tr
+				th Name
+				td 
+					input(type="text", name="name")
+			tr
+				th Description
+				td 
+					textarea(name="description", cols="33", rows="3")
+			tr
+				th Price
+				td 
+					input(type="text", name="price")
+			tr
+				th Category
+				td 
+					select(name="cat_id") Select category
+						each c in cat
+							option(value=c._id)= c.cat_name
+			tr
+				th
+				td
+					input(type="submit", value="guardar")
+					a(href="/") volver

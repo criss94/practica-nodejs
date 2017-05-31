@@ -1,0 +1,34 @@
+extends layouts/master
+block content
+	if login == 1
+		h4= name
+		h5
+			a(href="/logout") Salir
+	else
+		h5 
+			a(href="/login") iniciar session
+		h5 
+			a(href="/register") registrarse
+
+	if pro.length <= 0
+		h2(align='center') No hay productos en la DB
+	else
+		h2(align='center')= title
+		table(border="1")
+			tr
+				th Name
+				th Description
+				th Price
+				th Category
+				th 
+					a(href="/add") NEW
+			each p in pro
+				tr
+					td= p.name
+					td= p.description
+					td= p.price
+					td= p.cat_id.cat_name
+					td
+						a(href="/edit/" + p.id) Edit
+						br
+						a(href="/show/" + p.id) Delete

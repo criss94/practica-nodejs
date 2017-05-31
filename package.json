@@ -1,0 +1,28 @@
+{
+  "name": "api-rest-nodejs-repaso",
+  "version": "1.0.0",
+  "description": "api rest json",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "cristian@gmail.com"
+  },
+  "keywords": [
+    "nodeJS"
+  ],
+  "author": "@criss94",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.10.3",
+    "pug": "^2.0.0-rc.1"
+  }
+}

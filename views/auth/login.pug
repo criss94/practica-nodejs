@@ -1,0 +1,18 @@
+extends ../layouts/master
+block content
+	h2(align="center") INICIA SESION
+	form(action="/signin", method="POST")
+		table
+			tr
+				th Email
+				td
+					input(type="text", name="email")
+			tr
+				th password
+				td
+					input(type="password", name="password")
+			tr
+				th
+				td
+					input(type="submit", value="login")
+	h5(style="color:red")= errorLogin
