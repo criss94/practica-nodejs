@@ -5,22 +5,28 @@ block content
 		table
 			tr
 				th Name
-				td 
+				td
 					input(type="text", name="name", value= p.name)
 			tr
 				th Description
-				td 
+				td
 					textarea(name="description", cols="33", rows="3")= p.description
 			tr
 				th Price
-				td 
+				td
 					input(type="text", name="price", value= p.price)
 			tr
 				th Category
-				td 
+				td
 					select(name="cat_id") Select category
 						each c in cat
-							option(value= c._id)= c.cat_name
+							- var id_prod = p.cat_id
+							- var id_cat = c._id
+							- var condicional = (`${id_prod}` == `${id_cat}`)
+							if condicional
+								option(value= c._id selected)= c.cat_name
+							else
+								option(value= c._id)= c.cat_name
 			tr
 				th
 				td
